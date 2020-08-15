@@ -106,6 +106,10 @@ def game_process():
     questions_count = 0
     # количество правильных ответов
     right_answers_count = 0
+    speak('Перед началом прослушай ноты')
+    for key, value in notes.items():
+        speak('Нота ' + str(key))
+        playsound(value)
 
     while True:
         # +1 вопрос
@@ -136,7 +140,6 @@ def game_process():
             # если ответ верен
             if int(answer) - 1 == index[0]:
                 speak('Правильно!')
-                print('Ответ верен')
                 right_answers_count = right_answers_count + 1
                 # если ответ  не верен
             else:

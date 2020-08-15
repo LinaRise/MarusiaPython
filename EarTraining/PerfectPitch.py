@@ -2,6 +2,7 @@ import datetime
 import random
 import sys
 import time
+import os
 
 import pyttsx3
 import speech_recognition as sr
@@ -141,17 +142,16 @@ def game_process():
             else:
                 speak('Неправильно!')
                 speak('Это была нота ' + str(chosen_note))
-                print('Ответ не верен')
+
         # если ввдено слово
         else:
             if answer == 'стоп':
                 speak('Игра закончена')
                 speak('Вы ответили правильно на ' + str(right_answers_count) + ' из ' + str(
                     questions_count) + ' вопросов')
-                sys.exit()
+                os._exit(0)
             else:
-                speak('Комнада не ясна')
-                print("Комнада не ясна")
+                speak('Команда не ясна')
 
 
 r = sr.Recognizer()
